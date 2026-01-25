@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <header>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPW5FrUnDlawAtAZRyIe6F4ra0GtHUG6gnvQ&usqp=CAU" 
+         alt="شعار المدرسة" 
+         style="max-width:120px; display:block; margin: 0 auto 10px; border-radius:10px;">
+</header>
+<meta charset="UTF-8">
+<title>مدرسة صلاح سالم الإعدادية بنين</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- خطوط وألوان جميلة -->
+<style>
+    /* الخطوط والألوان الأساسية */
+    body {
+        font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        direction: rtl;
+        background: #f0f4f8;
+        color: #333;
+        scroll-behavior: smooth;
+    }
+
+    /* هيدر الموقع */
+    header {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    header p {
+        margin-top: 10px;
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    /* قائمة التنقل */
+    nav {
+        background: #084298;
+        text-align: center;
+        padding: 15px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    nav button {
+        background: white;
+        color: #084298;
+        border: none;
+        padding: 12px 20px;
+        margin: 5px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    nav button:hover {
+        background: #dbe5ff;
+        transform: translateY(-2px);
+    }
+
+    /* المحتوى */
+    .content {
+        display: none;
+        max-width: 900px;
+        margin: 20px auto;
+        background: white;
+        padding: 30px 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .content h2 {
+        color: #0d6efd;
+        margin-top: 0;
+    }
+
+    .content ul {
+        padding-left: 20px;
+    }
+
+    .content ul li {
+        margin-bottom: 8px;
+    }
+
+    /* تدرج عند الأزرار hover */
+    button.action-btn {
+        background: #0d6efd;
+        color: white;
+        border-radius: 6px;
+        padding: 10px 18px;
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button.action-btn:hover {
+        background: #6610f2;
+    }
+
+    /* الفوتر */
+    footer {
+        background: #0d6efd;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    /* تأثير دخول */
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(10px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>مدرسة صلاح سالم الإعدادية بنين</h1>
+        
+</header>
+
+<nav>
+    <button onclick="showSection('about')">عن المدرسة</button>
+    <button onclick="showSection('classes')">الصفوف</button>
+    <button onclick="showSection('students')">الطلاب</button>
+    <button onclick="showSection('address')">العنوان</button>
+</nav>
+
+<!-- محتوى المدرسة -->
+<div id="about" class="content">
+    <h2>عن المدرسة</h2>
+    <p>
+        مدرسة صلاح سالم الإعدادية بنين مدرسة حكومية تهدف إلى إعداد الطلاب علميًا وتربويًا خلال مرحلة التعليم الإعدادي، مع الاهتمام بالقيم والأنشطة التعليمية.
+    </p>
+</div>
+
+<div id="classes" class="content">
+    <h2>الصفوف الدراسية</h2>
+    <ul>
+        <li>الصف الأول الإعدادي</li>
+        <li>الصف الثاني الإعدادي</li>
+        <li>الصف الثالث الإعدادي</li>
+    </ul>
+</div>
+
+<div id="students" class="content">
+    <h2>شؤون الطلاب</h2>
+    <p>نحرص على الانضباط والتفوق العلمي، ونشجع على الأنشطة الطلابية والثقافية.</p>
+    <button class="action-btn" onclick="welcomeStudent()">رسالة ترحيب للطلاب</button>
+    <p id="message" style="margin-top:10px; font-weight: bold;"></p>
+</div>
+
+<div id="address" class="content">
+    <h2>عنوان المدرسة</h2>
+    <p>          مدرسة صلاح سالم الإعدادية بنين<br>
+جمهورية      مصر العربية – محافظة سوهاج - بجوار ميدان الشبان المسلمين
+    </p>
+</div>
+
+<footer>
+    <p>© 2026 مدرسة صلاح سالم الإعدادية بنين</p>
+</footer>
+
+<script>
+    // دالة عرض المحتوى عند الضغط على زر
+    function showSection(id){
+        document.querySelectorAll('.content').forEach(div => div.style.display = "none");
+        document.getElementById(id).style.display = "block";
+    }
+
+    // رسالة ترحيب للطلاب
+    function welcomeStudent(){
+        document.getElementById('message').innerText = 
+        "أهلاً بطلاب مدرسة صلاح سالم الإعدادية بنين 🌟 نتمنى لكم التفوق والنجاح!";
+    }
+
+    // عرض أول قسم تلقائيًا عند فتح الموقع
+    showSection('about');
+</script>
+
+</body>
+</html>
